@@ -3,6 +3,23 @@ local excel = require 'excel.converter'
 
 local function GetLogInfo(R,A)
    local C = log.connection()
+   -----------------
+--local pTime = log.setNextPollTime('2014/01/01 00:00:00')-----------
+--local pTime = log.pollTime()----------------
+--   log.MapTime(
+--   log.
+--   log.MapTime(os.time())
+--   os.time():S()
+--   log.queryLogs{ user='admin',password='password',polltime='2016/05/27 16:20:00'}
+   log.queryLogs{user='admin',password='password',polltime='2016-05-27 16:57:00'}
+   local Results = C:query{sql='SELECT * FROM LogInfo LIMIT 5000', live=true}
+   trace(#Results)
+   local C = log.connection()
+   log.reset(C)
+   local Results = C:query{sql='SELECT * FROM LogInfo LIMIT 5000', live=true}
+   trace(#Results)
+--   log.reset(
+   --------------
    local Start = os.ts.time()
    local Sql = "SELECT * FROM LogInfo"
    if (R.params.channel) then
@@ -13,7 +30,7 @@ local function GetLogInfo(R,A)
    
    local Results = C:query{sql=Sql, live=true}
    trace(#Results)
-   
+
    local T = excel.convertResultSet(Results)
    local TimeStampI = excel.lookupColumn(T, 'TimeStamp')
    for i=2, #T do

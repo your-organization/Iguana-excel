@@ -1,6 +1,7 @@
-local sheet = require 'excel.sheet'
+local sheet = {}
+sheet.serve = require 'excel.sheet'
 
-function GetSpreadSheet(R, Auth)
+local function GetSpreadSheet(R, Auth)
    sheet.serve{user=Auth.username, sheet='IguanaFeed.xlsm', host=R.headers.Host}
 end
 

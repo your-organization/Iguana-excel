@@ -66,20 +66,22 @@ ol li {
 <div class="container">
 <div class="contents">
    
-<h1>Excel Uploading Tool</h1>
-<p>You are logged in as <b>NAME</b> to a Microsoft Excel loading feed powered by Iguana.</p>
-<p>This is a tool which allows you to edit datasets in Excel tables and upload that data for processing by Iguana.</p>
+<h1>Export From Excel to Iguana</h1>
+<p>You are logged in as <b>NAME</b> to a feed that exports data from Microsoft Excel and loads it into Iguana. 
+This is a tool which allows you to edit datasets in Excel tables and then upload that data for processing by Iguana.</p>
+<p><b>Note:</b>  This example is composed of two channels, <b>Export 1: Export From Excel</b> and <b>Export 2: Process Export Data</b>.</p>
 
 <div class="insetbox">   
 <p>Let's get started:</p>
 <ol>
-<li><a href='sheet.xlsm'>Download a spreadsheet</a></li>
+<li><a href='ExcelExport.xlsm'>Download a sample spreadsheet</a>.</li>
 <li>Open it in Excel 2011 or above.</li>
-<li><b>Enable macros</b> when excel asks you.</li>
-<li>When the spreadsheet has opened click on Push Data button in the first "GetData" work sheet</li>
-<li>Look for a password dialog in Excel.  Enter the password you used for the username <b>NAME</b> that you logged in with.</li>
-<li>This will have uploaded the data in the "Accounts" tab of the excel spread sheet.</li>
-<li>The channel will receive the data, break each row into a friendly JSON object and shunt it downstream for transactional processing by another translator channel in Iguana.</li>
+<li><b>Enable macros</b> when Excel asks you to.</li>
+<li>When the spreadsheet has opened click on <b>Push Data to Iguana</b> button in the "GetData" work sheet</li>
+<li>Enter the password for your user <b>NAME</b> in the password dialog box.</li>
+<li>This will have uploaded the data in the "Accounts" tab of the spread sheet to Iguana.</li>
+<li>Our <i>first</i> sample Iguana channel <b>Export 1: Export From Excel</b> receives the data, breaks each row into a friendly JSON object and then shunts it downstream for transactional processing by another Translator channel.</li>
+<li>The <i>second</i> channel <b>Export 2: Process Export Data</b> receives the data from the first and can perform whatever processing is needed.</li>
 </ol>
 </div>
 <p>

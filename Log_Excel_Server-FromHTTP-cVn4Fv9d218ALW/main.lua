@@ -1,9 +1,14 @@
--- This represents the boiler plate for a channel representing an Iguana webservice channel
--- serving data up to Excel
--- See http://help.interfaceware.com/v6/excel-adapter
+-- A two channel example showing how to export log data from Iguana 
+-- into a database and then import it into Excel using a web service
+
+-- This channel imports Iguana log data from a SQLite database populated
+-- by another channel, in this case "Log 1: Export Logs to DB"
+
+-- http://help.interfaceware.com/v6/excel-import
 
 -- We get the general framework
-local server = require 'excel.server'
+local server = {}
+server.serve = require 'excel.server'
 local actionTable = require 'iguana.action'
 
 -- These requires each return a single function which
@@ -17,11 +22,11 @@ local Report         = require 'report'
 local function SetupActions()
    local Dispatcher = actionTable.create()
    local AdminActions = Dispatcher:actions{group='Administrators', priority=1}
-   AdminActions[""]           = Default
-   AdminActions["sheet.xlsm"] = GetSpreadSheet
-   AdminActions["feed"]       = GetLogInfo
-   AdminActions["reset"]      = Reset
-   AdminActions["report"]     = Report
+   AdminActions[""]                 = Default
+   AdminActions["LogAnalysis.xlsm"] = GetSpreadSheet
+   AdminActions["feed"]             = GetLogInfo
+   AdminActions["reset"]            = Reset
+   AdminActions["report"]           = Report
    trace(AdminActions)
    local UserActions = Dispatcher:actions{group='Users', priority=2} 
    UserActions[""] = GetDefaultUserPage

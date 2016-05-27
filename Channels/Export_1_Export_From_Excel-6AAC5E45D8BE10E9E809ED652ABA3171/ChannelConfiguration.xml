@@ -1,7 +1,7 @@
 <channel
    name="Export 1: Export From Excel"
    guid="6AAC5E45D8BE10E9E809ED652ABA3171"
-   description="This channel will serve up an Excel spread sheet which has a button that can be used to export the data of any Excel table in this sheet back into this Iguana web service.&#xD;&#xA;&#xD;&#xA;See http://help.interfaceware.com/v6/excel-exporter&#xD;&#xA;&#xD;&#xA;Use this channel with the From Excel Exporter."
+   description="This channel will serve up an Excel spread sheet which has a button that can be used to export the data of any Excel table in this sheet back into this Iguana web service.&#xD;&#xA;&#xD;&#xA;http://help.interfaceware.com/v6/excel-export&#xD;&#xA;&#xD;&#xA;This channel works with the &quot;Export 2: Process Export Data&quot; channel"
    start_automatically="true"
    logging_level="1"
    use_message_filter="false">
@@ -10,8 +10,8 @@
    <from_http
       type="mapper"
       guid="Excel_importer-FromHTTP-msv6YSSFLMTqO9"
-      commit_id="7fb549fd4b638e0d8ca1e77ba367d607a36f1daa"
-      commit_comment="Import Translators: Iguana Excel repo imports"
+      commit_id="21460405089f58bd247feb52bab806e883cc0d40"
+      commit_comment="updated help and comments"
       mapper_url_path="export/"/>
    <message_filter
       filter_after_logging="false"

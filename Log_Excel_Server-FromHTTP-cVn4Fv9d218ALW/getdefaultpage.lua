@@ -67,20 +67,24 @@ ol li {
 <div class="contents">
    
 <h1>Log Analysis Excel Feed</h1>
-<p>You are logged in as <b>NAME</b> to a log analysis excel feed powered by Iguana.  Let's get started:</p>
+<p>You are logged in as <b>NAME</b> to a feed that exports Iguana logs to a database, then queries that database and sends the results to Excel.</p>
+<p><b>Note:</b> This example is composed of two channels, <b>Log 1: Export Logs to DB</b> and <b>Log 2: Import DB Logs to Excel</b>.</p>
 <div class="insetbox">
+Let's get started:
 <ol>
-<li><a href='sheet.xlsm'>Download a spreadsheet</a></li>
+<li><a href='LogAnalysis.xlsm'>Download a spreadsheet</a></li>
 <li>Open it in Excel 2011 or above.</li>
 <li><b>Enable macros</b> when excel asks you.</li>
-<li>When the spreadsheet has opened click on the button in the first "GetData" work sheet</li>
-<li>Look for a password dialog in Excel.  Enter the password you used for the username <b>NAME</b> that you logged in with.</li>
-<li>After the data is updated click on the button to update the Pivot tables</li>
-<li>Then go and investigate the pivot reports.</li>
+<li>When the spreadsheet has opened click on the <b>Get Data From Iguana</b> button in the "GetData" work sheet</li>
+<li>Enter the password for your user <b>NAME</b> in the password dialog box.</li>
+<li>After the data is updated click on the <b>Refresh Reports</b> button to update the Pivot tables</li>
+<li>Then go and investigate the pivot tables reports in the other worksheets.</li>
+<li>Our <i>first</i> sample Iguana channel <b>Log 1: Export Logs to DB</b> reads Iguana log data and saves it into a SQLite database.</li>
+<li>The <i>second</i> channel <b>Log 2: Import DB Logs to Excel</b> queries  log data from the database and exports the results to Excel.</li>
 </ol>
 </div>
 <p>
-The spreadsheet has Visual Basic for Applications (VBA) macro code which does the HTTP call to fetch
+The spreadsheet uses Visual Basic for Applications (VBA) macro code which does the HTTP call to fetch
 and parse data from a SQLite database we built off the log data.
 </p>
 <p>

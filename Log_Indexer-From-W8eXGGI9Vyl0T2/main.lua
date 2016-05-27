@@ -1,5 +1,13 @@
--- This channel will index up to a 1000 messages at time from the logs of an Iguana instance
--- It puts the data into a SQLite database which can then be used to report into Excel.
+-- A two channel example showing how to export log data from Iguana 
+-- into a database and then import it into Excel using a web service
+
+-- This channel will index up to a 1000 messages at time from the logs
+-- of an Iguana instance, it saves the data into a SQLite database which
+-- can then be used for reporting. In this example we use a secon channel
+-- "Log 1: Export Logs to DB" to import the data into Excel.
+
+-- http://help.interfaceware.com/v6/excel-import
+
 local log = require 'log.analyse'
 
 local Username = 'admin'
